@@ -8,8 +8,7 @@ function HeroQuestions() {
           <div className="space-y-20">
             <h1 className="text-center">Frequently asked questions</h1>
             <p className="text-center">
-              You can set preferred display name, create your profile URL and
-              manage other personal settings.
+              We have answered here some frequently asked questions
             </p>
           </div>
         </div>

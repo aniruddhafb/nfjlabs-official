@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../../components/header/Header';
 import Footer from '../../../components/footer/Footer';
 import useDocumentTitle from '../../../components/useDocumentTitle';
-import {HashLink} from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 import {
   Accordion,
@@ -12,7 +12,7 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import HeroQuestions from '../../../components/hero/HeroQuestions';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const FaqContent = [
   {
@@ -69,8 +69,8 @@ const Faq = () => {
         <div className="questions__page mt-100">
           <div className="row justify-content-center">
             <div className="col-lg-8">
-              <div className="row">
-                <div className="col-lg-3 col-md-3 col-sm-4">
+              <div className="row justify-content-center">
+                {/* <div className="col-lg-3 col-md-3 col-sm-4">
                   <div className="box side">
                     <div className="sidenav">
                       <ul>
@@ -111,7 +111,7 @@ const Faq = () => {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="col-lg-9 col-md-9 col-sm-8">
                   <div className="questions__box space-y-30">
                     <Accordion

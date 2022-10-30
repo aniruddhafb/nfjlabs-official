@@ -162,9 +162,11 @@ const UploadComponent = () => {
                             <br /> the platform and is pending
                             <br /> approval
                           </p>
-                          <div className="btn btn-grad btn-border">
-                            Mint More
-                          </div>
+                          <a href="">
+                            <div className="btn btn-grad btn-border">
+                              Mint More
+                            </div>
+                          </a>
 
                           <div className="" style={{ marginTop: "20px" }}>
                             <a href="/">Return Home</a>

@@ -58,7 +58,7 @@ const SidebarProfile = ({ creatorData, userProfile }) => {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <i className="ri-messenger-line" />
+                    <i className="ri-twitter-line" />
                     <span className="color_text"> Twitter</span>
                   </a>
                 </li>

@@ -71,6 +71,7 @@ const Routes = () => {
           <Route path="/privacy" component={PrivacyPolicy} />
 
           <Route path="/contact" component={Contact} />
+          <Route path="/faq" component={Faq} />
           <Route component={NotFound} />
         </Switch>
       </Router>

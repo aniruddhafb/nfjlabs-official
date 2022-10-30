@@ -69,7 +69,7 @@ function PopularCreators() {
       <div className="container">
         <div className="">
           <div className="section_head mb-30">
-            <h2 className="section__title text-center">Popular Artist</h2>
+            <h2 className="section__title text-center">Popular Artists</h2>
           </div>
           <div className="section__body">
             <div className="row mb-20_reset justify-content-start">

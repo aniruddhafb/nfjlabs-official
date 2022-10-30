@@ -215,9 +215,9 @@ const Marketplace = () => {
           {/* // Treding Colletion */}
           <div>
             <div className=" py-2 " style={{ margin: "0 30px" }}>
-              <h3 style={{ color: "#e20ef9" }}>Trending Collections</h3>
+              <h3 style={{ color: "#e20ef9" }}>Trending NFTs</h3>
               <p style={{ color: "white", marginBottom: "16px" }}>
-                These are some of the most trending collections on our NFJ
+                These are some of the most trending nfts on our NFJ
                 marketplace.
               </p>
             </div>

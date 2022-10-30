@@ -174,7 +174,7 @@ const SidebarProfile = ({ creatorData, userProfile }) => {
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <i className="ri-messenger-line" />
+                    <i className="ri-twitter-line" />
                     <span className="color_text"> Twitter</span>
                   </a>
                 </li>
@@ -205,8 +205,8 @@ const CardProfile = ({ creatorData }) => {
   useEffect(() => {
     fetch(
       "https://cex.io/api/last_price/" +
-        ChainsInfo[chainId]?.CURRENCY_SYMBOL +
-        "/USD"
+      ChainsInfo[chainId]?.CURRENCY_SYMBOL +
+      "/USD"
     )
       .then((res) => res.json())
       .then((data) => {

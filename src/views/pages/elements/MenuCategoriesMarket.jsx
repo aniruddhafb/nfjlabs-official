@@ -36,6 +36,24 @@ function MenuCategoriesMarket() {
       heading: "Rings",
       icon: "ri-omega",
     },
+    {
+      title: "Brooch",
+      category: "brooch",
+      heading: "Brooch",
+      icon: "ri-omega",
+    },
+    {
+      title: "Earrings",
+      category: "earrings",
+      heading: "Earrings",
+      icon: "ri-omega",
+    },
+    {
+      title: "Watch Charm",
+      category: "watch charm",
+      heading: "Watch Charm",
+      icon: "ri-omega",
+    },
   ];
 
   const onFilterChange = (data) => {

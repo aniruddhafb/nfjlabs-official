@@ -20,6 +20,9 @@ const category = [
   { label: "Necklace", value: "necklaces" },
   { label: "Pendant", value: "pendant" },
   { label: "Rings", value: "rings" },
+  { label: "Brooch", value: "brooch" },
+  { label: "Earrings", value: "earrings" },
+  { label: "Watch Charm", value: "watch charm" },
 ];
 const network = [
   { label: "All blockchain", value: "" },

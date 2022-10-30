@@ -84,8 +84,9 @@ const EditProfile = () => {
                       <br /> the platform and is pending
                       <br /> approval
                     </p>
-                    <div className="btn btn-grad">Edit Profile</div>
-
+                    <a href="">
+                      <div className="btn btn-grad">Edit Profile</div>
+                    </a>
                     <div className="" style={{ marginTop: "20px" }}>
                       <a href="/">Return Home</a>
                     </div>
@@ -141,7 +142,9 @@ const EditProfile = () => {
                     <br /> the platform and is pending
                     <br /> approval
                   </p>
-                  <div className="btn btn-grad btn-border">Edit Profile</div>
+                  <a href="">
+                    <div className="btn btn-grad btn-border">Edit Profile</div>
+                  </a>
 
                   <div className="" style={{ marginTop: "20px" }}>
                     <a href="/">Return Home</a>
@@ -230,8 +233,7 @@ const EditProfile = () => {
                       </div>
                     </div>
                     <div className="col-lg-6 social-media">
-                      <h3 className="mb-20">Your Social media</h3>
-                      <div className="form-group space-y-10">
+                      <div className="form-group space-y-10" style={{ marginTop: 50 }}>
                         <div className="space-y-40">
                           <div className="space-y-10">
                             <span className="nameInput">Avtar URL</span>
@@ -330,9 +332,8 @@ const EditProfile = () => {
 
                   <div className="hr" />
                   <p className="color_black">
-                    To {status ? "Update" : "Create"} your settings you should
-                    through your wallet. Click ' {status ? "Update" : "Create"}{" "}
-                    profile' then sign the message.
+                    To {status ? "Update" : "Create"} your profile click on {status ? "Update" : "Create"}{" "}
+                    profile to confirm the changes.
                   </p>
                   <div>
                     <button type="submit" className="btn btn-grad btn-border">
@@ -352,7 +353,7 @@ const EditProfile = () => {
                   <div
                     onClick={() => login(connectors.injected)}
                     className="text-center"
-                    // onClick={update}
+                  // onClick={update}
                   >
                     <div className="btn btn-dark">Connect Wallet</div>
                   </div>

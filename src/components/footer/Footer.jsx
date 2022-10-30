@@ -40,7 +40,7 @@ function Footer() {
             background: "linear-gradient(90deg, #4B2BE9,#E70FD1, #F0F442)",
           }}
         >
-          {}{" "}
+          { }{" "}
         </div>
         <div className="container px-5">
           <div className="row">
@@ -103,15 +103,15 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="marketplace" style={{ color: "white" }}>
+                  <Link to="live-auctions" style={{ color: "white" }}>
                     {" "}
-                    Collections
+                    Live Auctions
                   </Link>
                 </li>
                 <li>
-                  <Link to="/creators" style={{ color: "white" }}>
+                  <Link to="/artists" style={{ color: "white" }}>
                     {" "}
-                    Artist
+                    Artists
                   </Link>
                 </li>{" "}
                 <li>
@@ -141,25 +141,15 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" style={{ color: "white" }}>
-                    Community
+                  <Link to="/contact" style={{ color: "white" }}>
+                    Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/privacy" style={{ color: "white" }}>
-                    Help
+                  <Link to="/faq" style={{ color: "white" }}>
+                    Faqs
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to="/terms" style={{ color: "white" }}>
-                    Terms and Conditions
-                  </Link>
-                </li> */}
-                {/* <li>
-                  <Link to="/community" style={{ color: "white" }}>
-                    Community
-                  </Link>
-                </li> */}
               </ul>
             </div>
           </div>

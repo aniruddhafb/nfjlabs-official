@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import MobileMenu from "./Menu/MobileMenu";
 import logo from "../images/logo.svg";
 import MegaMenu from "./Menu/MegaMenu";
+import MegaProfile from "./Menu/megaProfile";
 import { useWeb3React } from "@web3-react/core";
 import { DisconnectWallet } from "../../Redux/actions";
 import { ChainsInfo } from "../../config/config-chains";
@@ -108,6 +109,15 @@ const Header = () => {
                   </Link>
                 </li>{" "}
                 <li className="has_popup">
+                  <Link
+                    className="color_black "
+                    style={{ fontWeight: "bold" }}
+                    to="/live-auctions"
+                  >
+                    Live Auctions
+                  </Link>
+                </li>{" "}
+                <li className="has_popup">
                   <a
                     className="color_black "
                     href="https://mv.ibentos.com/rnd/artGallary2022/"
@@ -130,7 +140,7 @@ const Header = () => {
                 ))}
                 <li className="has_popup2">
                   <Link
-                    className="color_black is_new hovered"
+                    className="color_black hovered"
                     style={{ fontWeight: "bold" }}
                     to="/"
                   >
@@ -143,6 +153,7 @@ const Header = () => {
                     <MegaMenu />
                   </ul>
                 </li>
+
               </ul>
             </div>
             {/* ================= */}
@@ -291,6 +302,25 @@ const Header = () => {
             >
               <MobileMenu />
             </div>
+            {active ? (
+              <div>
+                <li className="has_popup2">
+                  <Link
+                    className="color_black is_new hovered"
+                    style={{ fontWeight: "bold" }}
+                    to="/"
+                  >
+                    <i className="ri-user-line" />
+                  </Link>
+                  <ul
+                    className="menu__popup2 space-y-20"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    <MegaProfile />
+                  </ul>
+                </li>
+              </div>
+            ) : (<div></div>)}
           </div>
         </div>
       </header>

@@ -18,7 +18,7 @@ const Contact = () => {
           <div className="" style={{ maxWidth: "700px", margin: "0 auto " }}>
             <div className="content__wrap space-y-20">
               <div className="space-y-20">
-                <h1 className="text-left">Hi, 🖐 we are NFJ LABS</h1>
+                <h1 className="text-left">Hi,we are NFJ LABS</h1>
                 <p className="contact__desc">
                   We’re here to help and answer any question you might have.
                   <br /> We look forward to hearing from you 🙂
@@ -75,7 +75,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       className="btn btn-primary"
-                      // onClick={notify}
+                    // onClick={notify}
                     >
                       Send your message
                     </button>

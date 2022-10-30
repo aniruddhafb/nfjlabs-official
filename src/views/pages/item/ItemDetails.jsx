@@ -46,6 +46,7 @@ const ItemDetails = () => {
   const { account, active, library, chainId } = useWeb3React();
   const { login } = useAuth();
   const [isTransactionCompleted, setIsTransactionCompleted] = useState(false);
+  let blockchainURL = "https://mumbai.polygonscan.com/";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -78,8 +79,8 @@ const ItemDetails = () => {
       });
     fetch(
       "https://cex.io/api/last_price/" +
-        ChainsInfo[chainId]?.CURRENCY_SYMBOL +
-        "/USD"
+      ChainsInfo[chainId]?.CURRENCY_SYMBOL +
+      "/USD"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -756,13 +757,18 @@ const ItemDetails = () => {
                       <ul style={{ fontWeight: "500", color: "#766767" }}>
                         <li>
                           Contract Address:{" "}
-                          {truncateAddress(ChainsInfo[chainId]?.NFT_ADDRESS)}
+                          <a href={`${blockchainURL}/address/${ChainsInfo[chainId]?.NFT_ADDRESS}`} target="_blank">{truncateAddress(ChainsInfo[chainId]?.NFT_ADDRESS)}</a>
                         </li>
-                        <li>TokenID: {tokenId}</li>
+                        <li>TokenID:  <a href={`${blockchainURL}/token/${ChainsInfo[chainId]?.NFT_ADDRESS}?a=${tokenId}#inventory`} target="_blank">{tokenId}</a></li>
                         <li>Token Standard: ERC-721</li>
                         <li>Blockchain: {NFTData?.network}</li>
                         {/* <li>Metadata: Centerlized</li> */}
                       </ul>
+                      <button className="btn btn-sm" style={{ backgroundColor: "#E93FB3" }}>
+                        <div>
+                          <a href={NFTData.unLockableContent} target="_blank" style={{ color: "#fff" }}>View More</a>
+                        </div>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -838,7 +844,7 @@ const ItemDetails = () => {
                     style={{ display: "flex", justifyContent: "space-between" }}
                   >
                     {" "}
-                    <div className="avatars space-x-5">
+                    <div className="avatars space-x-5" style={{ marginBottom: 8 }}>
                       <div className="media">
                         <div className="badge">
                           <img
@@ -878,15 +884,13 @@ const ItemDetails = () => {
                     </div>
                   </div>
 
-                  <a href={NFTData.unLockableContent}>Unlockable Content</a>
-
                   <div className="d-flex justify-content-between">
                     <a
                       href={`https://ipfs.io/ipfs/${NFTData?.image}`}
                       target="_blank"
                       style={{
                         border: "1px solid black",
-                        padding: "10px",
+                        padding: "8px 20px",
                         borderRadius: "999px",
                         display: "flex",
                         gap: "10px",
@@ -895,7 +899,7 @@ const ItemDetails = () => {
                     >
                       <div>
                         <img
-                          width={40}
+                          width={30}
                           src={
                             process.env.PUBLIC_URL + "/img/icons/ipfs-share.svg"
                           }
@@ -910,7 +914,7 @@ const ItemDetails = () => {
                     <div className="d-flex space-x-20">
                       {active ? (
                         NFTOwner ===
-                        ChainsInfo[chainId]?.NFT_MARKETPLACE_ADDRESS ? (
+                          ChainsInfo[chainId]?.NFT_MARKETPLACE_ADDRESS ? (
                           NFTData.isAuction ? (
                             NFTAuction === account ? null : null
                           ) : NFTSeller === account ? null : null
@@ -927,7 +931,7 @@ const ItemDetails = () => {
                           <div>
                             {active ? (
                               NFTOwner ===
-                              ChainsInfo[chainId]?.NFT_MARKETPLACE_ADDRESS ? (
+                                ChainsInfo[chainId]?.NFT_MARKETPLACE_ADDRESS ? (
                                 NFTData.isAuction ? (
                                   NFTAuction === account ? (
                                     <button className="btn btn-lg  btn-grad">
@@ -957,7 +961,7 @@ const ItemDetails = () => {
                                   </div>
                                 </button>
                               ) : // <div>{"Not Listed"}</div>
-                              undefined
+                                undefined
                             ) : (
                               <button className="btn btn-lg  btn-grad">
                                 <div>Connect Wallet</div>
@@ -992,12 +996,12 @@ const ItemDetails = () => {
                                 }}
                               >
                                 <div className="space-y-20">
-                                  <h3>Checkout</h3>
+                                  {/* <h3>Checkout</h3> */}
 
                                   {active ? (
                                     NFTOwner ===
-                                    ChainsInfo[chainId]
-                                      ?.NFT_MARKETPLACE_ADDRESS ? (
+                                      ChainsInfo[chainId]
+                                        ?.NFT_MARKETPLACE_ADDRESS ? (
                                       NFTData.isAuction ? (
                                         NFTAuction === account ? (
                                           <>
@@ -1017,6 +1021,7 @@ const ItemDetails = () => {
                                           </>
                                         ) : (
                                           <>
+                                            <h3>Bid</h3>
                                             <p>
                                               You are about to bid on{" "}
                                               <span className="color_black">
@@ -1049,8 +1054,7 @@ const ItemDetails = () => {
                                       ) : NFTSeller === account ? (
                                         <>
                                           <p>
-                                            Click on Remove on auction button
-                                            for remove{" "}
+                                            Click on Remove Sale to cancel your listing{" "}
                                             <span className="color_black">
                                               {NFTData?.nftName}{" "}
                                             </span>
@@ -1064,8 +1068,7 @@ const ItemDetails = () => {
                                         </>
                                       ) : (
                                         <p>
-                                          Click on Buy Now on auction button for
-                                          remove{" "}
+                                          Confirm your purchase of {" "}
                                           <span className="color_black">
                                             {NFTData?.nftName}{" "}
                                           </span>
@@ -1080,8 +1083,9 @@ const ItemDetails = () => {
                                     ) : NFTOwner === account ? (
                                       NFTData.isAuction ? (
                                         <>
+                                          <h3>Put on Auction</h3>
                                           <p>
-                                            You are about to put on auction{" "}
+                                            You are about to put on auction {" "}
                                             <span className="color_black">
                                               {NFTData?.nftName}{" "}
                                             </span>
@@ -1093,7 +1097,7 @@ const ItemDetails = () => {
                                             </span>
                                           </p>
                                           <div className="space-y-10">
-                                            <p>Set minimum bid value</p>
+                                            <p>Set Minimum Bid Value</p>
                                             <input
                                               type="number"
                                               className="form-control"
@@ -1102,8 +1106,9 @@ const ItemDetails = () => {
                                               onChange={(e) => {
                                                 setPrice(e.target.value);
                                               }}
-                                              placeholder="00.00 ETH"
+                                              placeholder="00.00 MATIC"
                                             />
+                                            <p>Set Action Ending Date</p>
                                             <input
                                               type="date"
                                               className="form-control"
@@ -1117,6 +1122,7 @@ const ItemDetails = () => {
                                         </>
                                       ) : (
                                         <>
+                                          <h3>Put on Sale</h3>
                                           <p>
                                             You are about to put on sale{" "}
                                             <span className="color_black">
@@ -1130,39 +1136,31 @@ const ItemDetails = () => {
                                             </span>
                                           </p>
                                           <div className="space-y-10">
-                                            <p>You pay</p>
                                             <input
-                                              type="text"
+                                              type="number"
                                               className="form-control"
                                               defaultValue={price || null}
                                               onChange={(e) => {
                                                 setPrice(e.target.value);
                                               }}
-                                              placeholder="00.00 ETH"
+                                              placeholder="00.00 MATIC"
                                             />
                                           </div>
-
                                           <div className="hr" />
                                           <div className="d-flex justify-content-between">
-                                            <p> You must bid at least:</p>
+                                            <p> You Get :</p>
                                             <p className="text-right color_black txt _bold">
-                                              {price} ETH
-                                            </p>
-                                          </div>
-                                          <div className="d-flex justify-content-between">
-                                            <p> service free:</p>
-                                            <p className="text-right color_black txt _bold">
-                                              {price} ETH /
+                                              {price} MATIC /
                                             </p>
                                             <span className="color-grey">
-                                              {" "}
+                                              {"  "}
                                               $
                                               {parseFloat(
                                                 price * usdPrice.lprice
                                               ).toFixed(2)}
                                             </span>
                                           </div>
-                                          <div className="d-flex justify-content-between">
+                                          {/* <div className="d-flex justify-content-between">
                                             <p> Total bid amount:</p>
                                             <p className="text-right color_black txt _bold">
                                               {parseFloat(
@@ -1170,7 +1168,8 @@ const ItemDetails = () => {
                                               )}{" "}
                                               ETH
                                             </p>
-                                          </div>
+                                          </div> */}
+
                                         </>
                                       )
                                     ) : (
@@ -1194,8 +1193,8 @@ const ItemDetails = () => {
                                   >
                                     {active ? (
                                       NFTOwner ===
-                                      ChainsInfo[chainId]
-                                        ?.NFT_MARKETPLACE_ADDRESS ? (
+                                        ChainsInfo[chainId]
+                                          ?.NFT_MARKETPLACE_ADDRESS ? (
                                         NFTData.isAuction ? (
                                           NFTAuction === account ? (
                                             <div>
