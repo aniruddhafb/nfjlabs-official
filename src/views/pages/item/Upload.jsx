@@ -326,17 +326,27 @@ const UploadComponent = () => {
                               Description
                               <span className="color_text"> (optional) </span>
                             </span>
-                            <input
+                            {/* <input
                               type="text"
                               className="form-control"
                               placeholder="e. g. `Artistic design art`"
-                              maxLength="200"
                               required={false}
                               defaultValue={description}
                               onChange={(e) => {
                                 setDescription(e.target.value);
                               }}
-                            />
+                            /> */}
+                            <textarea
+                              type="text"
+                              className="form-control"
+                              placeholder="e. g. `Artistic design art`"
+                              required={false}
+                              defaultValue={description}
+                              onChange={(e) => {
+                                setDescription(e.target.value);
+                              }}
+                              cols="30"
+                              rows="10"></textarea>
                           </div>
                           <div className="space-y-10">
                             <span className="nameInput">

@@ -64,7 +64,7 @@ function Footer() {
                   </li>
                   <li>
                     <a
-                      href="https://twitter.com/jeweller_aj"
+                      href="https://twitter.com/nfjlabs"
                       rel="noreferrer"
                       target="_blank"
                     >
